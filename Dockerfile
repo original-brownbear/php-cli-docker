@@ -19,3 +19,5 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer global require "phpunit/phpunit"
 
 ENV PATH /root/.composer/vendor/bin:$PATH
+
+RUN ln -s /root/.composer/vendor/bin/phpunit /usr/bin/phpunit
