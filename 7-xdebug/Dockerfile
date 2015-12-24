@@ -24,4 +24,5 @@ RUN ln -s /root/.composer/vendor/bin/phpunit /usr/bin/phpunit
 
 #XDEBUG
 
-RUN pecl install xdebug-2.4.0RC3 && echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini
+RUN pecl install xdebug-2.4.0RC3 
+RUN echo "zend_extension=xdebug.so\nxdebug.cli_color=1\nxdebug.remote_autostart=1\nxdebug.remote_connect_back=1" > /usr/local/etc/php/conf.d/xdebug.ini

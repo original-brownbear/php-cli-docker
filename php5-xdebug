@@ -1,0 +1,2 @@
+DIR=$(dirname $(readlink -f "$0"))
+docker run -i --rm -v "${PWD}":"${PWD}" -v ${DIR}:${DIR} -v /tmp/:/tmp/ -w ${DIR} --net=host --sig-proxy=true --pid=host originalbrownbear/php:5-cli-phpunit-xdebug php "$@"
